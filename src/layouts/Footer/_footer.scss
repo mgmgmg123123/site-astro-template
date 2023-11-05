@@ -1,5 +1,6 @@
 @charset "utf-8";
-@use "../global" as *;
+@use "@/assets/styles/global" as *;
+
 .l-footer {
   height: $footer_height_sp;
   background-color: $color_black;
