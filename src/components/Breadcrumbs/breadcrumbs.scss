@@ -1,0 +1,16 @@
+@charset "utf-8";
+@use "@/assets/styles/global" as *;
+
+.c-breadcrumbs {
+  .c-breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+  }
+  .c-breadcrumbs__item {
+  }
+  .c-breadcrumbs__link {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}

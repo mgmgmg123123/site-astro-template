@@ -1,7 +1,47 @@
 @charset "utf-8";
 @use "sass:math";
+@use "mixin";
+@use "variables";
 
 @mixin font_sans {
   font-family: "Noto Sans", sans-serif;
   font-family: "Noto Sans JP", sans-serif;
+}
+
+@mixin font_serif {
+  // font-family: "Poiret One", cursive;
+}
+
+@mixin font_english {
+  font-family: "Roboto", sans-serif;
+}
+
+// $size: 文字サイズ
+@mixin fz($size) {
+  font-size: $size + px;
+  font-size: math.div($size, variables.$base_font_size) + rem;
+}
+// $line: 行間、$fz: 文字サイズ
+@mixin line_height($line, $size) {
+  line-height: math.div($line, $size);
+}
+
+@mixin font_weight_light {
+  font-weight: 300;
+}
+
+@mixin font_weight_regular {
+  font-weight: 400;
+}
+
+@mixin font_weight_medium {
+  font-weight: 500;
+}
+
+@mixin font_weight_semiBold {
+  font-weight: 600;
+}
+
+@mixin font_weight_bold {
+  font-weight: 700;
 }

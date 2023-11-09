@@ -1,6 +1,7 @@
 ---
 import "node_modules/destyle.css";
 import "./_globalNav.scss";
+
 import type { HTMLAttributes } from "astro/types";
 
 type NavItem = {
@@ -15,16 +16,30 @@ type Props = HTMLAttributes<"nav"> & {
 const { nav, ...props } = Astro.props;
 ---
 
-<nav class="l-globalNav" {...props}>
-  <ul class="l-globalNav__list">
-    {
-      nav.map(({ name, path }) => (
-        <li class="l-globalNav__item">
-          <a href={path} class="l-globalNav__link">
-            {name}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+<nav class="l-globalNav js-hamburger-menu" {...props}>
+  <div class="l-globalNav__inner">
+    <ul class="l-globalNav__list">
+      {
+        nav.map(({ name, path }) => (
+          <li class="l-globalNav__item">
+            <a href={path} class="l-globalNav__link js-navLink">
+              {name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".js-navLink");
+    const path = location.pathname;
+    links.forEach((link) => {
+      if (link.getAttribute("href") === path) {
+        link.classList.add("_current");
+      }
+    });
+  });
+</script>

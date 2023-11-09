@@ -2,6 +2,23 @@
 import "node_modules/destyle.css";
 import "./_header.scss";
 import Logo from "@/components/Logo/Logo.astro";
+import GlobalNav from "@/layouts/GlobalNav/GlobalNav.astro";
+import ButtonHamburger from "@/components/ButtonHamburger/ButtonHamburger.astro";
+import { getPath } from "@/utils/getPath";
+const nav = [
+  {
+    name: "ホーム",
+    path: getPath.top,
+  },
+  {
+    name: "メッセージ",
+    path: getPath.message,
+  },
+  {
+    name: "企業概要",
+    path: getPath.company,
+  },
+];
 ---
 
 <header class="l-header">
@@ -12,5 +29,20 @@ import Logo from "@/components/Logo/Logo.astro";
       </a>
       <h1 class="l-header__h1">ロゴ</h1>
     </div>
+
+    <div class="l-header__globalNavWrap">
+      <GlobalNav nav={nav} />
+    </div>
+    <div class="l-header__hamburgerWrap">
+      <ButtonHamburger />
+    </div>
   </div>
 </header>
+
+<script>
+  import { hamburgerMenu } from "@/assets/scripts/hamburgerMenu";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    hamburgerMenu();
+  });
+</script>

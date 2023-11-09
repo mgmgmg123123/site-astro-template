@@ -4,6 +4,10 @@
 .kv {
   position: relative;
   max-width: 100%;
+  margin-top: $header_height_sp;
+  @include md {
+    margin-top: $header_height;
+  }
   .kv__inner {
     // height: calc(100vh - $header_height_sp);
     height: 340px;

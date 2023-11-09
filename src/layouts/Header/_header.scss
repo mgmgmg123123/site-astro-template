@@ -1,8 +1,13 @@
 @charset "utf-8";
 @use "@/assets/styles/global" as *;
-
 .l-header {
   height: $header_height_sp;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  background-color: $color_white;
   @include md {
     height: $header_height;
   }
@@ -10,8 +15,13 @@
     @include visually_hidden;
   }
   .l-header__inner {
-    padding: 20px;
     height: 100%;
+    display: flex;
+    padding-left: 20px;
+    justify-content: space-between;
+    @include md {
+      padding: 20px 40px;
+    }
   }
   .l-header__logo {
     display: flex;
@@ -21,14 +31,24 @@
   }
   .l-header__logoLink {
     width: fit-content;
-    display: block;
+    display: flex;
+    align-items: center;
     cursor: pointer;
+    height: 100%;
     svg {
       display: block;
-      width: 160px;
+      width: 60px;
       @include md {
-        width: 280px;
+        width: 80px;
       }
+    }
+  }
+
+  .l-header__hamburgerWrap {
+    position: relative;
+    z-index: 10;
+    @include md {
+      display: none;
     }
   }
 }
