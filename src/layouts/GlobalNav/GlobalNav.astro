@@ -22,7 +22,12 @@ const { nav, ...props } = Astro.props;
       {
         nav.map(({ name, path }) => (
           <li class="l-globalNav__item">
-            <a href={path} class="l-globalNav__link js-navLink">
+            <a
+              href={path}
+              class="l-globalNav__link js-navLink"
+              aria-label="グローバルナビ"
+              aria-hidden="false"
+            >
               {name}
             </a>
           </li>

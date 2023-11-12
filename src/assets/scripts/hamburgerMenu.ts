@@ -44,12 +44,14 @@ class HamburgerMenu {
   }
   openMenu() {
     this.menu.classList.add("_isActive");
+    this.menu.setAttribute("aria-hidden", "false");
     this.button.setAttribute("aria-label", "メニューを開く");
     this.button.setAttribute("aria-expanded", "true");
     this.bodyLock();
   }
   closeMenu() {
     this.menu.classList.remove("_isActive");
+    this.menu.setAttribute("aria-hidden", "true");
     this.button.setAttribute("aria-label", "メニューを表示する");
     this.button.setAttribute("aria-expanded", "false");
     this.bodyUnlock();

@@ -1,33 +1,32 @@
 @charset "utf-8";
 @use "@/assets/styles/global" as *;
 .l-header {
-  height: $header_height_sp;
   width: 100%;
   position: fixed;
   z-index: 5;
   top: 0;
   bottom: 0;
   background-color: $color_white;
-  @include md {
-    height: $header_height;
-  }
+  height: fit-content;
+  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
   .l-header__h1 {
     @include visually_hidden;
   }
   .l-header__inner {
-    height: 100%;
+    // height: 100%;
     display: flex;
     padding-left: 20px;
     justify-content: space-between;
+    min-height: $header_height_sp;
     @include md {
       padding: 20px 40px;
+      min-height: $header_height;
     }
   }
   .l-header__logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
   }
   .l-header__logoLink {
     width: fit-content;
