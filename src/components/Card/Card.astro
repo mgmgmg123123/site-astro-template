@@ -1,0 +1,17 @@
+---
+type ArticleProps = {
+  title: string;
+  date: string; //YYYY-MM-DD
+};
+
+type Props = ArticleProps;
+
+const { title, date } = Astro.props;
+---
+
+<article class="c-article">
+  <time class="c-article__dateTime" datetime={date}>
+    {date.replaceAll("-", ".")}
+  </time>
+  <h3 class="c-article__heading">{title}</h3>
+</article>

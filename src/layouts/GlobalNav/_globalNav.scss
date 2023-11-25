@@ -5,6 +5,8 @@
   position: relative;
   z-index: 5;
   @include under_md {
+    opacity: 0;
+    transform: translateX(100%);
     &:not(._isActive) {
       opacity: 0;
       transform: translateX(100%);
@@ -23,11 +25,12 @@
   }
   .l-globalNav__inner {
     height: 100%;
+    display: flex;
     @include under_md {
       padding: 80px 40px;
+      flex-direction: column;
     }
     @include md {
-      display: flex;
       align-items: center;
     }
   }
