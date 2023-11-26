@@ -1,0 +1,32 @@
+---
+import "node_modules/destyle.css";
+import "./_newsList.scss";
+type Article = {
+  title: string;
+  date: string; //YYYY-MM-DD
+  path: string;
+};
+
+type Props = {
+  newsList: Array<Article>;
+};
+
+const { newsList, ...props } = Astro.props;
+---
+
+<ul class="c-newsList">
+  {
+    newsList.map(({ title, date, path }) => (
+      <li class="c-newsList__item">
+        <a class="c-newsList__link" href={path}>
+          <div class="c-newsList__linkInner">
+            <time class="c-newsList__dateTime" datetime={date}>
+              {date.replaceAll("-", ".")}
+            </time>
+            <h3 class="c-newsList__heading">{title}</h3>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>

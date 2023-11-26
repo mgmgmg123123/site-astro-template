@@ -4,6 +4,8 @@ import "./_index.scss";
 import AppLayout from "@/layouts/App.astro";
 import GlobalNav from "@/layouts/GlobalNav/GlobalNav.astro";
 import Link from "@/components/Link/Link.astro";
+import ArticleList from "@/layouts/ArticleList/ArticleList.astro";
+import NewsList from "@/components/NewsList/NewsList.astro";
 
 const meta = {
   title: "ページ名 | サイト名",
@@ -24,6 +26,23 @@ const nav = [
   },
   {
     name: "hoge",
+    path: "",
+  },
+];
+const newsList = [
+  {
+    title: "お知らせ3",
+    date: "2030-01-10",
+    path: "",
+  },
+  {
+    title: "お知らせ２",
+    date: "2030-01-5",
+    path: "",
+  },
+  {
+    title: "お知らせ１",
+    date: "2030-01-01",
     path: "",
   },
 ];
@@ -59,185 +78,188 @@ const nav = [
     <section class="hoge2">
       <h2 class="hoge2__title">hoge2</h2>
       <p class="hoge2__subTitle">hoge2</p>
-      <ul class="hoge2__list">
-        <li class="hoge2__item">
-          <a class="hoge2__link" href="">
-            <div class="hoge2__linkInner">
-              <div class="hoge2__imgWrap">
-                <picture>
-                  <source
-                    src="https://placehold.jp/335x172.png"
-                    type="image/webp"
-                  />
-                  <img
-                    class="hoge2__img"
-                    src="https://placehold.jp/335x172.png"
-                    alt="hoge"
-                    width="335"
-                    height="172"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
+      <div>
+        <NewsList newsList={newsList} />
+        <ul class="hoge2__list">
+          <li class="hoge2__item">
+            <a class="hoge2__link" href="">
+              <div class="hoge2__linkInner">
+                <div class="hoge2__imgWrap">
+                  <picture>
+                    <source
+                      src="https://placehold.jp/335x172.png"
+                      type="image/webp"
+                    />
+                    <img
+                      class="hoge2__img"
+                      src="https://placehold.jp/335x172.png"
+                      alt="hoge"
+                      width="335"
+                      height="172"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+                <div class="hoge2__textWrap">
+                  <h3 class="hoge2__heading">hogehogehoge</h3>
+                  <time class="hoge2__datetime" datetime="2030-08-08"
+                    >2030.08.08</time
+                  >
+                </div>
               </div>
-              <div class="hoge2__textWrap">
-                <h3 class="hoge2__heading">hogehogehoge</h3>
-                <time class="hoge2__datetime" datetime="2030-08-08"
-                  >2030.08.08</time
-                >
+            </a>
+          </li>
+          <li class="hoge2__item">
+            <a class="hoge2__link" href="">
+              <div class="hoge2__linkInner">
+                <div class="hoge2__imgWrap">
+                  <picture>
+                    <source
+                      src="https://placehold.jp/335x172.png"
+                      type="image/webp"
+                    />
+                    <img
+                      class="hoge2__img"
+                      src="https://placehold.jp/335x172.png"
+                      alt="hoge"
+                      width="335"
+                      height="172"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+                <div class="hoge2__textWrap">
+                  <h3 class="hoge2__heading">hogehogehoge</h3>
+                  <time class="hoge2__datetime" datetime="2030-08-05"
+                    >2030.08.05</time
+                  >
+                </div>
               </div>
-            </div>
-          </a>
-        </li>
-        <li class="hoge2__item">
-          <a class="hoge2__link" href="">
-            <div class="hoge2__linkInner">
-              <div class="hoge2__imgWrap">
-                <picture>
-                  <source
-                    src="https://placehold.jp/335x172.png"
-                    type="image/webp"
-                  />
-                  <img
-                    class="hoge2__img"
-                    src="https://placehold.jp/335x172.png"
-                    alt="hoge"
-                    width="335"
-                    height="172"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-              <div class="hoge2__textWrap">
-                <h3 class="hoge2__heading">hogehogehoge</h3>
-                <time class="hoge2__datetime" datetime="2030-08-05"
-                  >2030.08.05</time
-                >
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="hoge2__item">
-          <a class="hoge2__link" href="">
-            <div class="hoge2__linkInner">
-              <div class="hoge2__imgWrap">
-                <picture>
-                  <source
-                    src="https://placehold.jp/335x172.png"
-                    type="image/webp"
-                  />
-                  <img
-                    class="hoge2__img"
-                    src="https://placehold.jp/335x172.png"
-                    alt="hogehogehoge"
-                    width="335"
-                    height="172"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-              <div class="hoge2__textWrap">
-                <h3 class="hoge2__heading">hogehogehoge</h3>
-                <time class="hoge2__datetime" datetime="2030-08-02
+            </a>
+          </li>
+          <li class="hoge2__item">
+            <a class="hoge2__link" href="">
+              <div class="hoge2__linkInner">
+                <div class="hoge2__imgWrap">
+                  <picture>
+                    <source
+                      src="https://placehold.jp/335x172.png"
+                      type="image/webp"
+                    />
+                    <img
+                      class="hoge2__img"
+                      src="https://placehold.jp/335x172.png"
+                      alt="hogehogehoge"
+                      width="335"
+                      height="172"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+                <div class="hoge2__textWrap">
+                  <h3 class="hoge2__heading">hogehogehoge</h3>
+                  <time class="hoge2__datetime" datetime="2030-08-02
 								"
-                  >2030.08.02
-                </time>
+                    >2030.08.02
+                  </time>
+                </div>
               </div>
-            </div>
-          </a>
-        </li>
-        <li class="hoge2__item">
-          <a class="hoge2__link" href="">
-            <div class="hoge2__linkInner">
-              <div class="hoge2__imgWrap">
-                <picture>
-                  <source
-                    src="https://placehold.jp/335x172.png"
-                    type="image/webp"
-                  />
-                  <img
-                    class="hoge2__img"
-                    src="https://placehold.jp/335x172.png"
-                    alt="hoge"
-                    width="335"
-                    height="172"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
+            </a>
+          </li>
+          <li class="hoge2__item">
+            <a class="hoge2__link" href="">
+              <div class="hoge2__linkInner">
+                <div class="hoge2__imgWrap">
+                  <picture>
+                    <source
+                      src="https://placehold.jp/335x172.png"
+                      type="image/webp"
+                    />
+                    <img
+                      class="hoge2__img"
+                      src="https://placehold.jp/335x172.png"
+                      alt="hoge"
+                      width="335"
+                      height="172"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+                <div class="hoge2__textWrap">
+                  <h3 class="hoge2__heading">hogehogehoge</h3>
+                  <time class="hoge2__datetime" datetime="2030-07-28"
+                    >2030.07.28</time
+                  >
+                </div>
               </div>
-              <div class="hoge2__textWrap">
-                <h3 class="hoge2__heading">hogehogehoge</h3>
-                <time class="hoge2__datetime" datetime="2030-07-28"
-                  >2030.07.28</time
-                >
+            </a>
+          </li>
+          <li class="hoge2__item">
+            <a class="hoge2__link" href="">
+              <div class="hoge2__linkInner">
+                <div class="hoge2__imgWrap">
+                  <picture>
+                    <source
+                      src="https://placehold.jp/335x172.png"
+                      type="image/webp"
+                    />
+                    <img
+                      class="hoge2__img"
+                      src="https://placehold.jp/335x172.png"
+                      alt="hogehoge"
+                      width="335"
+                      height="172"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+                <div class="hoge2__textWrap">
+                  <h3 class="hoge2__heading">hoge</h3>
+                  <time class="hoge2__datetime" datetime="2030-07-27"
+                    >2030.07.27</time
+                  >
+                </div>
               </div>
-            </div>
-          </a>
-        </li>
-        <li class="hoge2__item">
-          <a class="hoge2__link" href="">
-            <div class="hoge2__linkInner">
-              <div class="hoge2__imgWrap">
-                <picture>
-                  <source
-                    src="https://placehold.jp/335x172.png"
-                    type="image/webp"
-                  />
-                  <img
-                    class="hoge2__img"
-                    src="https://placehold.jp/335x172.png"
-                    alt="hogehoge"
-                    width="335"
-                    height="172"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
+            </a>
+          </li>
+          <li class="hoge2__item">
+            <a class="hoge2__link" href="">
+              <div class="hoge2__linkInner">
+                <div class="hoge2__imgWrap">
+                  <picture>
+                    <source
+                      src="https://placehold.jp/335x172.png"
+                      type="image/webp"
+                    />
+                    <img
+                      class="hoge2__img"
+                      src="https://placehold.jp/335x172.png"
+                      alt="hoge"
+                      width="335"
+                      height="172"
+                      decoding="async"
+                      loading="lazy"
+                    />
+                  </picture>
+                </div>
+                <div class="hoge2__textWrap">
+                  <h3 class="hoge2__heading">hogehogehoge</h3>
+                  <time class="hoge2__datetime" datetime="2030-07-26"
+                    >2030.07.26</time
+                  >
+                </div>
               </div>
-              <div class="hoge2__textWrap">
-                <h3 class="hoge2__heading">hoge</h3>
-                <time class="hoge2__datetime" datetime="2030-07-27"
-                  >2030.07.27</time
-                >
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="hoge2__item">
-          <a class="hoge2__link" href="">
-            <div class="hoge2__linkInner">
-              <div class="hoge2__imgWrap">
-                <picture>
-                  <source
-                    src="https://placehold.jp/335x172.png"
-                    type="image/webp"
-                  />
-                  <img
-                    class="hoge2__img"
-                    src="https://placehold.jp/335x172.png"
-                    alt="hoge"
-                    width="335"
-                    height="172"
-                    decoding="async"
-                    loading="lazy"
-                  />
-                </picture>
-              </div>
-              <div class="hoge2__textWrap">
-                <h3 class="hoge2__heading">hogehogehoge</h3>
-                <time class="hoge2__datetime" datetime="2030-07-26"
-                  >2030.07.26</time
-                >
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul>
-      <div class="hoge2__linkWrap">
-        <Link href="" text="hoge一覧" />
+            </a>
+          </li>
+        </ul>
+        <div class="hoge2__linkWrap">
+          <Link href="" text="hoge一覧" />
+        </div>
       </div>
     </section>
   </div>
